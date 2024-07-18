@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "petrov_igor_rf",
+    "password": "123",
+    "database": "solo-project",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "max_kosh_whale",
+    "password": "123",
+    "database": "test_exam",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "test_exam",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
