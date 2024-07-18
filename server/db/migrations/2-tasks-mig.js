@@ -15,6 +15,9 @@ module.exports = {
       description: {
         type: Sequelize.TEXT,
       },
+      isDone: {
+        type: Sequelize.BOOLEAN,
+      },
       userId: {
         type: Sequelize.INTEGER,
         references: {

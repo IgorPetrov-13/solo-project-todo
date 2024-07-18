@@ -8,19 +8,17 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.hasMany(models.Animal, {
+      this.hasMany(models.Task, {
         foreignKey: "userId",
       });
-      this.hasMany(models.Farm, {
-        foreignKey: "userId",
-      });
+     
     }
   }
   User.init(
     {
       name: DataTypes.STRING,
       email: DataTypes.STRING,
-      password: DataTypes.STRING,
+      
     },
     {
       sequelize,
