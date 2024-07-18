@@ -9,6 +9,11 @@ module.exports = {
         email: "admin@admin.ru",
        
       },
+      {
+        name: "user",
+        email: "user@user.ru",
+       
+      },
       
     ]);
   },

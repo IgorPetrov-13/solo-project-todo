@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       title: DataTypes.STRING,
       description: DataTypes.TEXT,
+      isDone: DataTypes.BOOLEAN,
       userId: DataTypes.INTEGER,
     },
     {
