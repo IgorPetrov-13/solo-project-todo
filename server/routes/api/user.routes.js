@@ -91,7 +91,7 @@ userRoute.delete("/:userId", async () => {
       return res.status(404).json({ message: "Task not found" });
     }
 
-    res.status(200).json({ message: "success" });
+    res.status(200).json({ message: "success", deletedTask });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
