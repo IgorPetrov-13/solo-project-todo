@@ -77,13 +77,13 @@ userRoute.post("/:userId", async (req, res) => {
 userRoute.delete("/:userId", async () => {
   try {
     const { userId } = req.params;
-    const taskId = req.headers.taskid; //! получаем id задачи из заголовков
+    const taskId = req.body; //! получаем id задачи из заголовков
+    console.log("req.body", req.body);
     console.log("taskId HEADER", taskId);
 
     const deletedTask = await Task.destroy({
       where: {
-        userId,
-        id: taskId,
+        taskId,
       },
     });
 
@@ -91,7 +91,7 @@ userRoute.delete("/:userId", async () => {
       return res.status(404).json({ message: "Task not found" });
     }
 
-    res.status(200).json({ message: "success", deletedTask });
+    res.status(200).json({ message: "success" });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

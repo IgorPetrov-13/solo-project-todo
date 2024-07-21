@@ -1,26 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import type { Tasks } from './TypeTasks';
-import { getApiTasks } from './api';
+
 import TaskItem from './TaskItem';
+import type { TypeTasks } from './TypeTasks';
+import { getApiTasks } from './api';
 
-function Tasks(): JSX.Element {
-  const [tasks, setTasks] = useState<Tasks | []>([]);
+type TypeProps = {
+  tasks: TypeTasks;
+  setTasks: React.Dispatch<React.SetStateAction<TypeTasks | []>>;
+};
 
+function TasksList({ tasks, setTasks }: TypeProps): JSX.Element {
   useEffect(() => {
-    getApiTasks(1)
+    getApiTasks()
       .then((data) => setTasks(data))
       .catch(console.log);
   }, []);
 
   return (
-    <div>
+    <div className="container">
       {tasks.map((task) => (
         <div key={task.id}>
           <TaskItem task={task} setTasks={setTasks} />
         </div>
       ))}
+      <br />
     </div>
   );
 }
 
-export default Tasks;
+export default TasksList;
